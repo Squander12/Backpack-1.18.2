@@ -12,9 +12,12 @@ import net.minecraft.world.entity.player.Inventory;
 
 public class ExtraStorageScreen extends AbstractContainerScreen<ExtraStorageMenu> {
     private static final ResourceLocation TEXTURE = new ResourceLocation("textures/gui/container/generic_54.png");
+    private final int containerRows = 1;
 
     public ExtraStorageScreen(ExtraStorageMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
+        this.imageHeight = 114 + this.containerRows * 18;
+        this.inventoryLabelY = this.imageHeight - 94;
     }
 
     @Override
@@ -24,7 +27,8 @@ public class ExtraStorageScreen extends AbstractContainerScreen<ExtraStorageMenu
         RenderSystem.setShaderTexture(0, TEXTURE);
         int x = (width - imageWidth) / 2;
         int y = (height - imageHeight) / 2;
-        this.blit(pPoseStack, x, y, 0, 0, imageWidth, imageHeight);
+        this.blit(pPoseStack, x, y, 0, 0, this.imageWidth, this.containerRows * 18 + 17);
+        this.blit(pPoseStack, x, y + this.containerRows * 18 + 17, 0, 126, this.imageWidth, 96);
     }
     @Override
     public void render(PoseStack pPoseStack, int pMouseX, int pMouseY, float pPartialTick) {

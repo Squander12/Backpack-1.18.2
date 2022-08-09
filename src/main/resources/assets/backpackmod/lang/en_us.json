@@ -2,5 +2,6 @@
   "item.backpackmod.backpack_small": "Small Backpack",
   "item.backpackmod.backpack_medium": "Medium Backpack",
   "item.backpackmod.backpack_large": "Large Backpack",
-  "container.backpackmod.ender_backpack": "Ender Backpack"
+  "container.backpackmod.ender_backpack": "Ender Backpack",
+  "container.backpackmod.extra_storage": "Extra Storage"
 }

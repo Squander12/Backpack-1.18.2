@@ -27,7 +27,8 @@ public class ClickBlock {
             if(level.getBlockState(pos).getBlock() == Blocks.SAND){
                 player.getCapability(ExtraStorageInventory.EXTRA_STORAGE).ifPresent(handler -> {
                     NetworkHooks.openGui((ServerPlayer) player, new SimpleMenuProvider((id, inv, plr) ->
-                            new ExtraStorageMenu(id, inv, handler), new TextComponent("EXTRA STORAGE")), buffer -> buffer.writeVarInt(9));
+                            new ExtraStorageMenu(id, inv, handler), ExtraStorageInventory.NAME_OF_CONTAINER),
+                            buffer -> buffer.writeVarInt(ExtraStorageInventory.SIZE_OF_CONTAINER));
                 });
             }
         }
